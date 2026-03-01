@@ -14,13 +14,10 @@ hero:
       link: /ko/reference/control-types
 
 features:
-  - icon: 📦
-    title: 리소스팩 UI
+  - title: 리소스팩 UI
     details: 마인크래프트 베드락의 리소스팩 UI 시스템을 처음부터 배워봅니다.
-  - icon: 📄
-    title: JSON UI
+  - title: JSON UI
     details: JSON 파일로 UI를 정의하는 방법과 구조를 이해합니다.
-  - icon: 📚
-    title: 상세 레퍼런스
+  - title: 상세 레퍼런스
     details: 컨트롤 타입, 프로퍼티, 바인딩 이름을 한눈에 확인합니다.
 ---
