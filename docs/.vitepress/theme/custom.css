@@ -88,33 +88,42 @@
   border-right-color: #3c3c3c;
 }
 
-/* ── 사이드바 내부 전체 reset (VitePress 기본 padding/margin 제거) ── */
-.VPSidebar .VPSidebarItem .item,
-.VPSidebar .VPSidebarItem .VPLink,
-.VPSidebar .VPSidebarItem .text {
-  padding: 0;
-  margin: 0;
-  line-height: 1;
+/* ══════════════════════════════════════════════════════
+   SIDEBAR ITEMS
+   VitePress scoped CSS 명시도(specificity) 문제 해결:
+   scoped 선택자는 [data-v-xxx] 속성이 붙어 0,2,0 이상이므로
+   필요한 곳에 !important 사용
+   ══════════════════════════════════════════════════════ */
+
+/* ── level-0 섹션 간격 (VitePress 기본값 24px → 줄임) ── */
+.VPSidebarItem.level-0 {
+  padding-bottom: 8px !important;
+}
+.VPSidebarItem.collapsed.level-0 {
+  padding-bottom: 4px !important;
 }
 
-/* ── 섹션 그룹 헤더 (시작하기 / 개념 / 레퍼런스) ── */
-.VPSidebarItem.level-0 > .item {
-  margin-top: 20px;
-  margin-bottom: 4px;
-}
-
+/* ── 섹션 그룹 헤더 텍스트 ── */
 .VPSidebarItem.level-0 > .item > .text {
+  padding: 0 !important;
+  line-height: 1.2 !important;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--vp-c-text-2);
-  line-height: 1;
 }
 
-/* ── 1단계 항목 (페이지 링크) ── */
+/* ── 1·2단계 .text 기본 여백 제거 (VitePress: padding 4px 0, line-height 24px) ── */
+.VPSidebarItem.level-1 .text,
+.VPSidebarItem.level-2 .text {
+  padding: 0 !important;
+  line-height: 1.4 !important;
+}
+
+/* ── 1단계 항목 ── */
 .VPSidebarItem.level-1 > .item {
-  padding: 5px 8px;
+  padding: 4px 8px;
   border-radius: 4px;
   transition: background-color 0.12s;
 }
@@ -122,10 +131,9 @@
 .VPSidebarItem.level-1 > .item .text {
   font-size: 13.5px;
   font-weight: 400;
-  line-height: 1.4;
 }
 
-/* ── 2단계 항목 (섹션 앵커) ── */
+/* ── 2단계 항목 ── */
 .VPSidebarItem.level-2 > .item {
   padding: 3px 8px;
   border-radius: 4px;
@@ -135,13 +143,7 @@
 .VPSidebarItem.level-2 > .item .text {
   font-size: 12.5px;
   font-weight: 400;
-  line-height: 1.4;
   color: var(--vp-c-text-2);
-}
-
-/* ── 2단계 들여쓰기 ── */
-.VPSidebarItem.level-2 {
-  padding-left: 12px;
 }
 
 /* ── hover ── */
