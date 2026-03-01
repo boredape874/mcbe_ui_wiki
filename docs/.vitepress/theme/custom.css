@@ -88,10 +88,17 @@
   border-right-color: #3c3c3c;
 }
 
+/* ── VitePress 기본 link 패딩 리셋 ── */
+.VPSidebarItem.level-1 .VPLink,
+.VPSidebarItem.level-2 .VPLink {
+  padding: 0;
+}
+
 /* ── 섹션 그룹 헤더 (시작하기 / 개념 / 레퍼런스) ── */
 .VPSidebarItem.level-0 > .item {
   padding: 0;
-  margin-top: 4px;
+  margin-top: 16px;
+  margin-bottom: 2px;
 }
 
 .VPSidebarItem.level-0 > .item > .text {
@@ -100,12 +107,11 @@
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--vp-c-text-2);
-  padding: 4px 4px 2px;
 }
 
 /* ── 1단계 항목 (페이지 링크) ── */
 .VPSidebarItem.level-1 > .item {
-  padding: 3px 6px;
+  padding: 4px 8px;
   border-radius: 4px;
   transition: background-color 0.12s;
 }
@@ -113,11 +119,12 @@
 .VPSidebarItem.level-1 > .item .text {
   font-size: 13.5px;
   font-weight: 400;
+  line-height: 1.4;
 }
 
 /* ── 2단계 항목 (섹션 앵커) ── */
 .VPSidebarItem.level-2 > .item {
-  padding: 2px 6px;
+  padding: 3px 8px;
   border-radius: 4px;
   transition: background-color 0.12s;
 }
@@ -125,6 +132,7 @@
 .VPSidebarItem.level-2 > .item .text {
   font-size: 12.5px;
   font-weight: 400;
+  line-height: 1.4;
   color: var(--vp-c-text-2);
 }
 
