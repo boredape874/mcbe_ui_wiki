@@ -1,6 +1,7 @@
 {
   "name": "mcbe-ui-wiki",
   "version": "1.0.0",
+  "type": "module",
   "description": "마인크래프트 베드락 UI 위키",
   "scripts": {
     "docs:dev": "vitepress dev docs",
