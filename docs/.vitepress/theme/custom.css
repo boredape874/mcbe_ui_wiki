@@ -177,19 +177,35 @@ div[class*='language-'] {
    SCROLLBAR — dark mode only
    ============================================================ */
 .dark ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 .dark ::-webkit-scrollbar-track {
-  background: #1e1e1e;
+  background: transparent;
 }
 
 .dark ::-webkit-scrollbar-thumb {
   background: #424242;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+/* 사이드바 스크롤바 — 배경에 맞게 */
+.dark .VPSidebar::-webkit-scrollbar-track {
+  background: #252526;
+}
+
+/* 라이트 모드 사이드바 스크롤바 */
+.VPSidebar {
+  scrollbar-width: thin;
+  scrollbar-color: #c0c0c0 transparent;
+}
+
+.dark .VPSidebar {
+  scrollbar-width: thin;
+  scrollbar-color: #424242 #252526;
 }
