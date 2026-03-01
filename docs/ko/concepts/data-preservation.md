@@ -7,11 +7,11 @@
 - 완성 예제: 화면 상단 actionbar
 :::
 
-## 데이터 보존이 필요한 이유
+## 데이터 보존이 필요한 이유 {#why}
 
 타이틀(`/title`) 명령어로 전달되는 텍스트는 화면에 잠깐 표시되었다가 사라집니다. 이 값이 사라진 뒤에도 **마지막으로 받은 값을 유지**하고 싶을 때 데이터 보존 기법을 사용합니다.
 
-## 기본 구조
+## 기본 구조 {#structure}
 
 보이는 부분(`label`)과 두뇌 역할을 하는 숨겨진 패널(`data_control`)로 나눕니다.
 
@@ -64,7 +64,7 @@ preserved_title_display (label)  ← 화면에 표시
 }
 ```
 
-## 구조 설명
+## 구조 설명 {#explanation}
 
 | 부분 | 역할 |
 |------|------|
@@ -73,7 +73,7 @@ preserved_title_display (label)  ← 화면에 표시
 | `source_property_name: "(#preserved_text - $update_string)"` | 보존된 값에서 트리거 문자열을 제거하고 실제 텍스트만 추출 |
 | `resolve_sibling_scope` | `data_control`이 `label`의 자식이 아닌 형제일 때 필요 |
 
-## 숫자 인식 문제 해결
+## 숫자 인식 문제 해결 {#number-issue}
 
 `(#preserved_text - $update_string)` 계산 결과가 `-123`처럼 **숫자로 해석**될 수 있습니다. `label`의 `text`는 문자열만 받기 때문에, 보이지 않는 문자 `§r`을 앞에 붙여 강제로 문자열로 만듭니다.
 
@@ -81,7 +81,7 @@ preserved_title_display (label)  ← 화면에 표시
 "source_property_name": "('§r' + #preserved_text - $update_string)"
 ```
 
-## 완성 예제: 화면 상단 actionbar
+## 완성 예제: 화면 상단 actionbar {#example}
 
 타이틀 명령어로 데이터를 받아 화면 상단에 배경과 함께 텍스트를 표시하는 완성 예제입니다.
 

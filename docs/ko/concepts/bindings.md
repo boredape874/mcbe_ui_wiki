@@ -7,7 +7,7 @@
 - visible, enabled 등 불리언 속성에 바인딩 활용하기
 :::
 
-## 바인딩이란?
+## 바인딩이란? {#what-is}
 
 **바인딩**은 게임 엔진에서 하드코딩된 값이나 다른 요소의 상태를 UI 요소의 속성에 연결하기 위해 사용합니다.
 
@@ -29,7 +29,7 @@
 
 `binding_name`으로 엔진이 제공하는 값을 불러오고, 그 값을 `text` 속성에서 `#title_text`로 참조합니다.
 
-## binding_name_override
+## binding_name_override {#name-override}
 
 바인딩으로 가져온 값을 다른 이름으로 바꿔 사용할 수 있습니다.
 
@@ -50,7 +50,7 @@
 
 `#title_text`로 값을 가져오지만, 요소 안에서는 `#display_text`라는 이름으로 사용합니다.
 
-## visible / enabled에 바인딩 활용
+## visible / enabled에 바인딩 활용 {#visible-enabled}
 
 `visible`이나 `enabled` 같은 불리언 속성은 바인딩과 자주 함께 사용됩니다.
 
@@ -85,7 +85,7 @@
 }
 ```
 
-## binding_type: "view"
+## binding_type: "view" {#type-view}
 
 `binding_type: "view"`는 **다른 요소의 상태**를 이 요소의 속성으로 가져올 때 사용합니다.
 
@@ -141,7 +141,7 @@
 
 타이틀 텍스트가 `'hello world'`가 아닐 때만 표시됩니다.
 
-## binding_type: "global"
+## binding_type: "global" {#type-global}
 
 전역 바인딩은 특정 부모 요소에 종속되지 않고, 게임 전체에서 제공되는 데이터를 가져올 때 사용합니다.
 
@@ -153,7 +153,7 @@
 }
 ```
 
-## resolve_sibling_scope
+## resolve_sibling_scope {#sibling-scope}
 
 `source_control_name`으로 참조할 대상이 **부모-자식** 관계가 아닌 **형제** 관계일 때 `resolve_sibling_scope: true`를 추가합니다.
 
@@ -175,7 +175,7 @@
 }
 ```
 
-## 요소 수정 (modifications)
+## 요소 수정 (modifications) {#modifications}
 
 기존 바닐라 요소의 `bindings` 배열에 새 바인딩을 추가할 때는 `modifications`를 사용합니다.
 
