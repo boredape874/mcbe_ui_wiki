@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  base: '/mcbe_ui_wiki/',
   title: 'MCBE UI Wiki',
   description: '마인크래프트 베드락 에디션 UI 개발 문서',
 
