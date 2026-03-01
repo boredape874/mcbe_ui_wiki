@@ -2,6 +2,11 @@
 
 마인크래프트 베드락 에디션 UI 개발 문서 사이트
 
+## JSON 문법이나 쳐 배우세요
+```
+https://www.youtube.com/watch?v=1ID6pfTViXo
+```
+
 ## 로컬 개발
 
 ```bash
