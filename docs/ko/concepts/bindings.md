@@ -5,6 +5,7 @@
 - binding_name과 binding_name_override 사용법
 - binding_type: "view"로 조건 연결하기
 - visible, enabled 등 불리언 속성에 바인딩 활용하기
+- binding_condition으로 평가 타이밍 제어하기
 :::
 
 ## 바인딩이란? {#what-is}
@@ -174,6 +175,59 @@
   }
 }
 ```
+
+## binding_condition {#binding-condition}
+
+`binding_condition`은 바인딩이 **언제 평가(업데이트)될지**를 지정합니다. 기본값은 `"always"`입니다.
+
+| 값 | 설명 |
+|----|------|
+| `"always"` | 매 프레임마다 평가합니다 (기본값) |
+| `"always_when_visible"` | 요소가 보일 때만 매 프레임 평가합니다 |
+| `"visible"` | 요소가 처음 보이게 될 때 한 번 평가합니다 |
+| `"visibility_changed"` | 요소의 visible 상태가 **변경되는 순간**에만 평가합니다 |
+| `"once"` | 최초 한 번만 평가하고 이후에는 평가하지 않습니다 |
+
+### always_when_visible 예제
+
+텍스트처럼 보일 때만 업데이트하면 되는 값에 사용합니다.
+
+```json
+{
+  "binding_name": "#player_position_text",
+  "binding_name_override": "#text",
+  "binding_condition": "always_when_visible",
+  "binding_type": "global"
+}
+```
+
+### once 예제
+
+컬렉션 아이템처럼 한 번 렌더링 후 변하지 않는 값에 사용합니다.
+
+```json
+{
+  "binding_name": "#chat_text",
+  "binding_name_override": "#text",
+  "binding_type": "collection",
+  "binding_collection_name": "chat_text_grid",
+  "binding_condition": "once"
+}
+```
+
+### visibility_changed — 데이터 보존 패턴 {#visibility-changed}
+
+`"visibility_changed"`는 요소의 visible 상태가 바뀌는 순간에 딱 한 번 평가됩니다. 이를 이용해 값이 들어오는 순간을 포착해 `property_bag`에 저장하는 **데이터 보존 패턴**에 사용됩니다.
+
+```json
+{
+  "binding_name": "#hud_title_text_string",
+  "binding_name_override": "#preserved_text",
+  "binding_condition": "visibility_changed"
+}
+```
+
+`data_control` 패널이 visible이 되는 순간(= 타이틀 명령어로 값이 들어오는 순간) 이 바인딩이 평가되어 `#preserved_text`에 값을 기록합니다. 자세한 패턴은 [데이터 보존](./data-preservation) 페이지를 참고하세요.
 
 ## 요소 수정 (modifications) {#modifications}
 
