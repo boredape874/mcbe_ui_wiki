@@ -1,0 +1,131 @@
+/* VSC Dark Theme Override */
+:root {
+  --vp-c-bg: #1e1e1e;
+  --vp-c-bg-soft: #252526;
+  --vp-c-bg-mute: #2d2d2d;
+  --vp-c-bg-alt: #252526;
+
+  --vp-c-text-1: #d4d4d4;
+  --vp-c-text-2: #a0a0a0;
+  --vp-c-text-3: #858585;
+
+  --vp-c-brand-1: #569cd6;
+  --vp-c-brand-2: #4080b0;
+  --vp-c-brand-3: #2a5f8f;
+  --vp-c-brand-soft: rgba(86, 156, 214, 0.14);
+
+  --vp-c-divider: #3c3c3c;
+  --vp-c-border: #3c3c3c;
+  --vp-c-gutter: #1e1e1e;
+
+  --vp-code-bg: #2d2d2d;
+  --vp-code-color: #d4d4d4;
+  --vp-code-block-bg: #1e1e1e;
+
+  --vp-nav-bg-color: #323233;
+  --vp-sidebar-bg-color: #252526;
+
+  --vp-c-tip-1: #4ec9b0;
+  --vp-c-tip-2: #3aaa96;
+  --vp-c-tip-3: #2d8a78;
+  --vp-c-tip-soft: rgba(78, 201, 176, 0.14);
+
+  --vp-c-warning-1: #dcdcaa;
+  --vp-c-warning-2: #c0c090;
+  --vp-c-warning-3: #a0a070;
+  --vp-c-warning-soft: rgba(220, 220, 170, 0.14);
+
+  --vp-c-danger-1: #f44747;
+  --vp-c-danger-2: #d03030;
+  --vp-c-danger-3: #a02020;
+  --vp-c-danger-soft: rgba(244, 71, 71, 0.14);
+}
+
+/* 다크 모드 강제 적용 */
+.dark {
+  --vp-c-bg: #1e1e1e;
+  --vp-c-bg-soft: #252526;
+  --vp-c-bg-mute: #2d2d2d;
+}
+
+/* Nav 바 */
+.VPNav {
+  background-color: #323233 !important;
+  border-bottom: 1px solid #3c3c3c !important;
+}
+
+/* Sidebar */
+.VPSidebar {
+  background-color: #252526 !important;
+  border-right: 1px solid #3c3c3c !important;
+}
+
+/* 사이드바 활성 항목 — VSC 파일 트리 선택 효과 */
+.VPSidebarItem.is-active > .item > .VPLink,
+.VPSidebarItem.is-active > .item > span {
+  border-left: 2px solid #569cd6;
+  padding-left: 14px;
+  color: #569cd6 !important;
+}
+
+/* 폰트 */
+:root {
+  --vp-font-family-base: 'Segoe UI', system-ui, sans-serif;
+  --vp-font-family-mono: 'Consolas', 'Courier New', monospace;
+}
+
+/* 코드 블록 */
+div[class*='language-'] {
+  background-color: #1e1e1e !important;
+  border: 1px solid #3c3c3c;
+  border-radius: 4px;
+}
+
+/* 인라인 코드 */
+:not(pre) > code {
+  background-color: #2d2d2d !important;
+  color: #d7ba7d !important;
+  border-radius: 3px;
+  padding: 2px 5px;
+}
+
+/* 스크롤바 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* 테이블 */
+.vp-doc table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.vp-doc th {
+  background-color: #2d2d2d;
+  color: #569cd6;
+  border: 1px solid #3c3c3c;
+}
+.vp-doc td {
+  border: 1px solid #3c3c3c;
+}
+.vp-doc tr:nth-child(even) {
+  background-color: #252526;
+}
+
+/* 링크 색상 */
+.vp-doc a {
+  color: #569cd6;
+}
+.vp-doc a:hover {
+  color: #9cdcfe;
+}
