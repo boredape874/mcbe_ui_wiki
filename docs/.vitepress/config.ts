@@ -33,9 +33,12 @@ export default defineConfig({
               items: [
                 { text: 'JSON UI 기초', link: '/ko/concepts/json-ui-basics' },
                 { text: '요소(Element) 시스템', link: '/ko/concepts/elements' },
+                { text: '변수(Variable)', link: '/ko/concepts/variables' },
+                { text: '연산자(Operator)', link: '/ko/concepts/operators' },
                 { text: '바인딩(Binding)', link: '/ko/concepts/bindings' },
+                { text: '조건부 렌더링', link: '/ko/concepts/conditional-rendering' },
                 { text: '애니메이션', link: '/ko/concepts/animations' },
-                { text: '변수와 조건', link: '/ko/concepts/variables-and-conditions' },
+                { text: '데이터 보존', link: '/ko/concepts/data-preservation' },
               ],
             },
             {
