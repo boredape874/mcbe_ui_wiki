@@ -180,13 +180,22 @@
    제한해 텍스트 끝 ~ outline 사이에 빈 공간이 생기는 문제 해결
    ============================================================ */
 
-/* outline 있을 때 텍스트 영역이 outline 바로 앞까지 꽉 차도록 */
+/* content-container max-width 제한 해제 */
 .VPDoc.has-aside .content-container {
   max-width: none !important;
 }
 
-/* 콘텐츠 ↔ outline 사이 패딩 축소 (기본 32px+32px=64px → 12px+12px=24px) */
+/* VPDoc 좌우 패딩 축소 (기본 32px → 16px) */
+@media (min-width: 960px) {
+  .VPDoc.has-sidebar {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* 콘텐츠 ↔ outline 사이 패딩 축소 */
 .VPDoc .container > .content {
+  padding-left: 16px !important;
   padding-right: 12px !important;
 }
 
